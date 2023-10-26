@@ -7,10 +7,10 @@ name = "pypi"
 
 [dev-packages]
 pytest = "*"
-assertpy = "*"
 pytest-watch = "*"
 black = "*"
 pylint = "*"
+pyhamcrest = "*"
 
 [requires]
 python_version = "3.12.0"

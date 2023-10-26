@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "5941c8fa3eed4cea50f6541af23be1e4eefab3dfe272ecb5113cbe28a44ece9c"
+            "sha256": "28f621de04b57317543e0257d49edc9d1c6f5cbe022541ffa3a9498fbfe268ac"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -17,13 +17,6 @@
     },
     "default": {},
     "develop": {
-        "assertpy": {
-            "hashes": [
-                "sha256:acc64329934ad71a3221de185517a43af33e373bb44dc05b5a9b174394ef4833"
-            ],
-            "index": "pypi",
-            "version": "==1.1"
-        },
         "astroid": {
             "hashes": [
                 "sha256:7d5895c9825e18079c5aeac0572bc2e4c83205c95d416e0b4fee8bc361d2d9ca",
@@ -150,6 +143,15 @@
             ],
             "markers": "python_version >= '3.8'",
             "version": "==1.3.0"
+        },
+        "pyhamcrest": {
+            "hashes": [
+                "sha256:c6acbec0923d0cb7e72c22af1926f3e7c97b8e8d69fc7498eabacaf7c975bd9c",
+                "sha256:f6913d2f392e30e0375b3ecbd7aee79e5d1faa25d345c8f4ff597665dcac2587"
+            ],
+            "index": "pypi",
+            "markers": "python_version >= '3.6'",
+            "version": "==2.1.0"
         },
         "pylint": {
             "hashes": [
