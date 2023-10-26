@@ -11,8 +11,14 @@ setup: ## Setup local environment
 
 .PHONY: test
 test:  ## Locally run unit tests
-	PIPENV_VERBOSITY=-1 pipenv run pytest
+	@PIPENV_VERBOSITY=-1 pipenv run pytest
 
 .PHONY: test-watch
 test-watch:  ## Locally run unit tests in watch mode
-	PIPENV_VERBOSITY=-1 pipenv run ptw
+	@PIPENV_VERBOSITY=-1 pipenv run ptw
+
+.PHONY: lint
+lint:  ## Lint and fix code
+	@PIPENV_VERBOSITY=-1
+	@pipenv run black --target-version=py312 .
+	@pipenv run pylint --recursive=y .
