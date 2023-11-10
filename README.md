@@ -2,7 +2,7 @@
 
 El **Sudoku** es un rompecabezas de números muy popular.
 
-El objetivo es rellenar una cuadrícula de 9 x 9 con números de modo que cada columna, cada fila y cada una de las nueve regiones de 3 x 3 que complonen la cuadrícula contengan todos los d´ígitos del 1 al 9.
+El objetivo es rellenar una cuadrícula de 9 x 9 con números de modo que cada columna, cada fila y cada una de las nueve regiones de 3 x 3 que componen la cuadrícula contengan todos los dígitos del 1 al 9.
 
 El punto de partida es una cuadrícula parcialmente completada:
 <p align="center">
@@ -33,7 +33,7 @@ Ninguna de estas opciones puede estar presente en una solución valida
 ## Instrucciones
 Crea una aplicación capaz de determinar si una matriz es una solución potencial para un Sudoku.
 
-El input es la ruta de un archivo **CSV** que contiene **N** filas y **N** números por fila, donde **N** es el cuadrado de un número entero mayor que 1:
+El input es la ruta de un archivo **CSV** que contiene **N** filas y **N** números por fila, donde **N** es el cuadrado de un número entero, **N** debe ser mayor que 3 (4,9,16,25,...):
 
 <p align="center">
    <em>1, 2, 3, 4,</em>
