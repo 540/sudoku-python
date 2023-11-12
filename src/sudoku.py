@@ -1,11 +1,10 @@
-import numpy as np
 
 class Sudoku(object):    
     def __init__(self, board):
         self.board = board
 
     def validate(self):
-        if (len(self.board) < 3) or (len(self.board[0]) != len(self.board)):
+        if (len(self.board) <= 3) or (len(self.board[0]) != len(self.board)):
             return "El input no cumple las reglas de Sudoku"
         
         if not self._validate_rows():
