@@ -25,7 +25,7 @@ class Sudoku(object):
         return zip(*self.board)
 
     def _validate_numbers(self, number_set):
-        values = list(range(1, len(set) + 1))
+        values = list(range(1, len(number_set) + 1))
         return sorted(number_set) == values
 
     
