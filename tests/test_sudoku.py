@@ -30,3 +30,8 @@ def test_board_column_must_not_contain_other_values_than_1_to_N_where_N_is_the_b
     sudoku = Sudoku([[0,2,3,4],[1,4,3,2],[4,2,3,1],[3,1,7,4]])
 
     assert_that(sudoku.validate(), equal_to("El input no cumple las reglas de Sudoku"))
+
+def test_board_column_must_not_contain_duplicates():
+    sudoku = Sudoku([[1,2,3,4],[1,4,3,2],[4,2,3,1],[3,1,2,4]])
+
+    assert_that(sudoku.validate(), equal_to("El input no cumple las reglas de Sudoku"))
