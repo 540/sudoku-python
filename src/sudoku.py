@@ -16,16 +16,16 @@ class Sudoku(object):
         return "El input cumple las reglas de Sudoku"
     
     def _validate_rows(self):
-        return all(self._validate_row(row) for row in self.board)
+        return all(self._validate_numbers(row) for row in self.board)
     
     def _validate_columns(self):
-        return all(self._validate_row(column) for column in self._get_columns())
+        return all(self._validate_numbers(column) for column in self._get_columns())
 
     def _get_columns(self):
         return zip(*self.board)
 
-    def _validate_row(self, row):
-        values = list(range(1, len(row) + 1))
-        return sorted(row) == values
+    def _validate_numbers(self, number_set):
+        values = list(range(1, len(set) + 1))
+        return sorted(number_set) == values
 
     
