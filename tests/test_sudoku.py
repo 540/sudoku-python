@@ -1,6 +1,11 @@
 from hamcrest import assert_that, equal_to
 from src.sudoku import Sudoku
 
+def test_valid_board():
+    sudoku = Sudoku([[3,2,1,4],[1,4,3,2],[4,3,2,1],[2,1,4,3]])
+
+    assert_that(sudoku.validate(), equal_to("El input cumple las reglas de Sudoku"))
+
 def test_empty_board_is_invalid():
     sudoku = Sudoku([])
 
@@ -31,8 +36,7 @@ def test_board_column_must_not_contain_duplicates():
 
     assert_that(sudoku.validate(), equal_to("El input no cumple las reglas de Sudoku"))
 
-#Este test no hace falta puesto que el test de la fila y columna ya lo cubren
 def test_board_region_must_not_contain_duplicates():
-    sudoku = Sudoku([[2,1,3,4],[1,3,4,2],[4,2,1,3],[3,1,2,4]])
+    sudoku = Sudoku([[1,2,3,4],[4,1,2,3],[3,4,1,2],[2,3,4,1]])
 
     assert_that(sudoku.validate(), equal_to("El input no cumple las reglas de Sudoku"))
