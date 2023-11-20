@@ -1,32 +1,38 @@
 import numpy as np
 
 class Validator(object):
-    
     def validate(self, board):
         board = np.array(board)
 
-        if (len(board) <= 3) or (len(board[0]) != len(board)):
-            return "El input no cumple las reglas de Sudoku"
+        if (
+            self._has_dimension_lower_than_4(board)
+            or not self._is_square(board)
+            or not self._validate_rows(board)
+            or not self._validate_columns(board)
+            or not self._validate_regions(board)
+        ):
+            return False
 
-        if not self._validate_rows(board):
-            return "El input no cumple las reglas de Sudoku"
+        return True
 
-        if not self._validate_columns(board):
-            return "El input no cumple las reglas de Sudoku"
+    def _has_dimension_lower_than_4(self, board):
+        return len(board) < 4
 
-        if not self._validate_regions(board):
-            return "El input no cumple las reglas de Sudoku"
-
-        return "El input cumple las reglas de Sudoku"
+    def _is_square(self, board):
+        return len(board) == len(board[0])
 
     def _validate_rows(self, board):
         return all(self._validate_numbers(row) for row in board)
 
     def _validate_columns(self, board):
-        return all(self._validate_numbers(column) for column in self._get_columns(board))
+        return all(
+            self._validate_numbers(column) for column in self._get_columns(board)
+        )
 
     def _validate_regions(self, board):
-        return all(self._validate_numbers(region) for region in self._get_regions(board))
+        return all(
+            self._validate_numbers(region) for region in self._get_regions(board)
+        )
 
     def _get_columns(self, board):
         return zip(*board)
