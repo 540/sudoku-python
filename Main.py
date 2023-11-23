@@ -13,3 +13,5 @@ if len(sys.argv) > 1:
     filename = sys.argv[1]
 
     sudoku.game(filename)
+else:
+    print("Error - Indica el fichero con el tablero")

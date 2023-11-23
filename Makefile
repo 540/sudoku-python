@@ -1,5 +1,10 @@
 .DEFAULT_GOAL := help
 
+# Takes the first target as command
+Command := $(firstword $(MAKECMDGOALS))
+# Skips the first word
+Arguments := $(wordlist 2,$(words $(MAKECMDGOALS)),$(MAKECMDGOALS))
+
 .PHONY: help
 help:  ## Show this help
 	@grep -E '^\S+:.*?## .*$$' $(firstword $(MAKEFILE_LIST)) | \
@@ -22,3 +27,10 @@ lint:  ## Lint and fix code
 	@PIPENV_VERBOSITY=-1
 	@pipenv run black --target-version=py312 .
 	@pipenv run pylint --recursive=y .
+
+.PHONY: run
+run: ## Run Sudoku
+	@pipenv run python -m Main $(Arguments)
+
+%::
+	@true
